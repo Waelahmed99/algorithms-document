@@ -1,0 +1,3 @@
+/home/wael/Desktop/Algorithms project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/wael/Desktop/Algorithms project/cmake-build-debug/CMakeFiles/Algorithms_project.dir
+/home/wael/Desktop/Algorithms project/cmake-build-debug/CMakeFiles/edit_cache.dir
