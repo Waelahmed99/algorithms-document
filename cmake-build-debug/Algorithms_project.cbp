@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/wael/Desktop/Algorithms project/algorithms.cpp">
+			<Option target="Algorithms_project"/>
+		</Unit>
+		<Unit filename="/home/wael/Desktop/Algorithms project/algorithms.h">
+			<Option target="Algorithms_project"/>
+		</Unit>
 		<Unit filename="/home/wael/Desktop/Algorithms project/main.cpp">
 			<Option target="Algorithms_project"/>
 		</Unit>

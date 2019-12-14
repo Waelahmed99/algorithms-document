@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/wael/Desktop/Algorithms project/main.cpp
+/home/wael/Desktop/Algorithms project/algorithms.cpp
+algorithms.h
+/home/wael/Desktop/Algorithms project/algorithms.h
 iostream
 -
+bits/stdc++.h
+-
+
+/home/wael/Desktop/Algorithms project/algorithms.h
 

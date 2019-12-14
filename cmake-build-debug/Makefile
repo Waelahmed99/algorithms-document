@@ -123,6 +123,33 @@ Algorithms_project/fast:
 	$(MAKE) -f CMakeFiles/Algorithms_project.dir/build.make CMakeFiles/Algorithms_project.dir/build
 .PHONY : Algorithms_project/fast
 
+algorithms.o: algorithms.cpp.o
+
+.PHONY : algorithms.o
+
+# target to build an object file
+algorithms.cpp.o:
+	$(MAKE) -f CMakeFiles/Algorithms_project.dir/build.make CMakeFiles/Algorithms_project.dir/algorithms.cpp.o
+.PHONY : algorithms.cpp.o
+
+algorithms.i: algorithms.cpp.i
+
+.PHONY : algorithms.i
+
+# target to preprocess a source file
+algorithms.cpp.i:
+	$(MAKE) -f CMakeFiles/Algorithms_project.dir/build.make CMakeFiles/Algorithms_project.dir/algorithms.cpp.i
+.PHONY : algorithms.cpp.i
+
+algorithms.s: algorithms.cpp.s
+
+.PHONY : algorithms.s
+
+# target to generate assembly for a file
+algorithms.cpp.s:
+	$(MAKE) -f CMakeFiles/Algorithms_project.dir/build.make CMakeFiles/Algorithms_project.dir/algorithms.cpp.s
+.PHONY : algorithms.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Algorithms_project"
 	@echo "... edit_cache"
+	@echo "... algorithms.o"
+	@echo "... algorithms.i"
+	@echo "... algorithms.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Algorithms_project.dir/main.cpp.o  -o Algorithms_project 
+/usr/bin/c++  -g   CMakeFiles/Algorithms_project.dir/main.cpp.o CMakeFiles/Algorithms_project.dir/algorithms.cpp.o  -o Algorithms_project 
