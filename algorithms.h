@@ -8,5 +8,6 @@ void quickSort();
 void patternMatching();
 void sequentialSearch();
 void tree();
+void shortestPath();
 
 #endif //ALGORITHMS_PROJECT_ALGORITHMS_H

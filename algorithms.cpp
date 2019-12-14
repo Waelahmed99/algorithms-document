@@ -6,6 +6,7 @@ using namespace std;
 
 #define print(text) (std::cout << text)
 #define get(x) (std::cin >> x)
+#define ll long long
 
 std::vector<int> vec;
 
@@ -187,4 +188,124 @@ void preorder(struct Node* node)
 }
 
 void tree() {
+    print("Tree insertion not yet implemented\nPreorder,Inorder,Postorder functions are implemented in aglorithms.cpp");
 }
+
+#define SIZE 9
+
+void shortestPath() {
+    // Sample graph.
+    int graph[SIZE][SIZE] = {{0, 4,  0, 0,  0,  0,  0, 8,  0},
+                             {4, 0,  8, 0,  0,  0,  0, 11, 0},
+                             {0, 8,  0, 7,  0,  4,  0, 0,  2},
+                             {0, 0,  7, 0,  9,  14, 0, 0,  0},
+                             {0, 0,  0, 9,  0,  10, 0, 0,  0},
+                             {0, 0,  4, 14, 10, 0,  2, 0,  0},
+                             {0, 0,  0, 0,  0,  2,  0, 1,  6},
+                             {8, 11, 0, 0,  0,  0,  1, 0,  7},
+                             {0, 0,  2, 0,  0,  0,  6, 7,  0}};
+
+    print("\n");
+    ll cost[SIZE + 5][SIZE + 5];
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            cout << graph[i][j] << setw(5);
+            if (i == j) {  // No cost from travelling to the same place.
+                cost[i][j] = 0;
+            }
+            else {
+                if (graph[i][j] == 0) // If there is no path from i to j make it maximum value.
+                    cost[i][j] = 1e15;
+                else    // if there is a path from i to j, assign its cost.
+                    cost[i][j] = graph[i][j];
+            }
+        }
+        cout << "\n";
+    }
+
+    int start = 0, end = SIZE - 1;
+    print("\nKindly from [0 to 8]\n");
+    print("Enter the point you want to start from: "), get(start);
+    print("Enter the point you want to travel to: "), get(end);
+
+    if (start < 0 || start > 8) start = 0;
+    if (end < 0 || end > 8) end = SIZE - 1;
+    // Check path from i to j, and path from [i to k] then [k to j].
+    for (int k = 0; k < SIZE; ++k)
+        for (int i = 0; i < SIZE; ++i)
+            for (int j = 0; j < SIZE; ++j)
+                cost[i][j] = min(cost[i][j], cost[i][k] + cost[k][j]);
+
+    print("Shortest distance between every node:\n");
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++)
+            if (cost[i][j] == 1e15)
+                cout << "INF" << setw(5);
+            else
+                cout << cost[i][j] << setw(5);
+        cout << endl;
+    }
+
+    cout << "\nShortest path cost: " << cost[start][end] << endl;
+    print("\nPlease see Graph sample in algorithms.cpp\n");
+}
+
+
+//
+//void shortestPath() {
+//    // Sample graph.
+//    int graph[SIZE][SIZE] = { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
+//                              { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
+//                              { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
+//                              { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
+//                              { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
+//                              { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
+//                              { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
+//                              { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
+//                              { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
+//    vector<vector<pair<int, int>>> adjList(SIZE + 5);
+//    for (int i = 0; i < SIZE; i++) {
+//        for (int j = 0; j < SIZE; j++) {
+//            cout << graph[i][j] << " ";
+//            if (graph[i][j] == 0)
+//                continue;
+//            adjList[i].push_back({j, graph[i][j]});
+//        }
+//        cout << endl;
+//    }
+//
+//    ll cost[SIZE + 5];
+//    int parent[SIZE + 5];
+//    for (int i = 0; i <= SIZE; i++)
+//        cost[i] = 1e15, parent[i] = -1;
+//
+//    int start = 2, end = 5;
+//    cost[start] = 0;
+//    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> pq;
+//    pq.push({0, start});
+//    while (pq.size()) {
+//        int node = pq.top().second;
+//        pq.pop();
+//        for (auto next : adjList[node]) {
+//            ll nxtCost = cost[node] + next.second;
+//            if (nxtCost < cost[next.first]) {
+//                cost[next.first] = nxtCost;
+//                pq.push({nxtCost, next.first});
+//                parent[next.first] = node;
+//            }
+//        }
+//    }
+//    cout << cost[end] << '\n';
+//    vector<int> path;
+//    int curr = end;
+//    while (curr != start) {
+//        path.push_back(curr);
+//        curr = parent[curr];
+//    }
+//    path.push_back(start);
+//    reverse(path.begin(), path.end());
+//    for (auto &x : path)
+//        cout << x << ' ';
+//    cout << '\n';
+//    print("\nPlease see Graph sample in algorithms.cpp\n");
+//}
